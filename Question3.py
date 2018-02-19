@@ -2,7 +2,18 @@
       #a. Display - It should display all information of the employee instance.
 
 class Employee():
-    def __init__(self,first_name,last_name,salary):
+    def __init__(self,first_name,last_name,Salary):
         self.first_name = first_name
         self.last_name = last_name
-        self.salary= salary
+        self.Salary= Salary
+
+    def emailGenerator(self):
+        self.email = self.first_name.lower() + '.' + self.last_name.lower() + '@deerwalk.edu.np'
+
+    def displayInfo(self):
+        print("First name: {}\nLast name: {}\nEmail: {}\nSalary: {}".format(self.first_name, self.last_name, self.email,self.Salary))
+
+emp1 = Employee(input('Enter first name: '), input('Enter last name: '),input('Salary: '))
+emp1.emailGenerator()
+emp1.displayInfo()
+
